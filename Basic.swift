@@ -120,3 +120,21 @@ a?.initClosure()
 a?.x = 5
 a?.myClosure()
 a = nil
+
+
+//Extensions
+
+extension Double {
+    func round(to place: Int) -> Double {
+        let prissionNumber = pow( 10 , Double(place))
+        var n = self
+        n = n * prissionNumber 
+        n.round()
+        n = n / prissionNumber
+        return n
+    }    
+}
+
+var myDouble = 3.14456
+var result = myDouble.round(to: 3)
+print(result)
