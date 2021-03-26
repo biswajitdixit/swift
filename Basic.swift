@@ -30,6 +30,7 @@ print(x)
 
 //Unwrapping Optional
 
+//force unwrapping
 var a:Int? = 2
 var c:Int? = 3
 var b:Int = 4
@@ -40,6 +41,51 @@ print(a! + c!) // 5
 var unwrapThis:String? = "Unwrap me please"
 print(unwrapThis) // Optional("Unwrap me please")
 print(unwrapThis!)// Unwrap me please
+
+//option binding
+var name: String? = "data"
+
+if let temp = name {
+    print(temp)
+}else{
+    print("var store nil value")
+}
+
+
+//nil Coalescing operator
+
+let name: String? = nil
+let unwrappedName = name ?? "Anonymous"
+print(unwrappedName)
+
+//guard
+func operation (){
+    var name: String? = "Optional"
+    guard let temp = name else {
+        print("Name  is nil")
+        return 
+    }
+    print(temp)
+}
+
+operation()    
+
+//optional chainning
+
+class Student {
+    var degree: Course?
+}
+
+class Course {
+    var courseName = "BTECH"
+}
+var nidhi = Student()
+if let courseTitle = nidhi.degree?.courseName{
+    print(courseTitle)
+}else{
+    print("Unable To Rich")
+}
+    
 
 //Error Handaling
 
